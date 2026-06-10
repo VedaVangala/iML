@@ -1,0 +1,530 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="1. Direct Execution" href="direct.html" /><link rel="prev" title="Usage" href="usage.html" />
+
+    <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
+        <title>Running the Tool - Finding eML Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=a3d7da1c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Finding eML Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Finding eML Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="outline.html">Outline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Running the Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct.html">1. Direct Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">2. Interactive Execution</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="classify.html">classify module</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/running_tool.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="running-the-tool">
+<h1>Running the Tool<a class="headerlink" href="#running-the-tool" title="Link to this heading">¶</a></h1>
+<p>To run the tool, ensure that the required Docker volumes are set up. You can do this by using the following command on compute:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>veda504/finding_eml:v1.1
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;/home/files_dir_path:/mnt&quot;</span><span class="w"> </span>veda504/finding_eml:v1.1<span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+<p>This command starts a container using the image <code class="docutils literal notranslate"><span class="pre">veda504/finding_eml:v1.1</span></code> and mounts the local directory of files into the container at <code class="docutils literal notranslate"><span class="pre">/mnt</span></code>. It is suggested to use mentioned Docker for running the tool for better results.</p>
+<details>
+<summary>Click to view library versions used in Docker</summary><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Package                       Version      Editable project location
+----------------------------- ------------ -------------------------
+absl-py                       2.0.0
+aiohttp                       3.9.1
+aiosignal                     1.3.1
+alabaster                     0.7.13
+anndata                       0.9.2
+asttokens                     2.4.1
+async-timeout                 4.0.3
+attrs                         23.1.0
+Babel                         2.14.0
+backcall                      0.2.0
+beautifulsoup4                4.12.2
+bleach                        6.1.0
+cached-property               1.5.2
+certifi                       2023.11.17
+charset-normalizer            3.3.2
+chex                          0.1.7
+cmake                         3.28.1
+comm                          0.2.0
+contextlib2                   21.6.0
+contourpy                     1.1.1
+cycler                        0.12.1
+Cython                        3.0.7
+debugpy                       1.8.0
+decorator                     5.1.1
+defusedxml                    0.7.1
+dm-tree                       0.1.8
+docrep                        0.3.2
+docutils                      0.20.1
+et-xmlfile                    1.1.0
+etils                         1.3.0
+executing                     2.0.1
+fastjsonschema                2.19.0
+filelock                      3.13.1
+finding-eML                   0.1          /app/src
+flax                          0.7.2
+fonttools                     4.47.0
+frozenlist                    1.4.1
+fsspec                        2023.12.2
+furo                          2023.9.10
+gdown                         4.7.1
+get-annotations               0.1.2
+googleDriveFileDownloader     1.2
+h5py                          3.10.0
+idna                          3.6
+igraph                        0.10.8
+imagesize                     1.4.1
+imbalanced-learn              0.11.0
+importlib-metadata            7.0.0
+importlib-resources           6.1.1
+ipykernel                     6.27.1
+ipython                       8.12.3
+jax                           0.4.13
+jaxlib                        0.4.13
+jedi                          0.19.1
+Jinja2                        3.1.2
+joblib                        1.3.2
+jsonschema                    4.20.0
+jsonschema-specifications     2023.11.2
+jupyter_client                8.6.0
+jupyter_core                  5.5.1
+jupyterlab_pygments           0.3.0
+kiwisolver                    1.4.5
+leidenalg                     0.10.1
+lightning-utilities           0.10.0
+lit                           17.0.6
+llvmlite                      0.41.1
+markdown-it-py                3.0.0
+MarkupSafe                    2.1.3
+matplotlib                    3.7.4
+matplotlib-inline             0.1.6
+mdurl                         0.1.2
+mistune                       3.0.2
+ml-collections                0.1.1
+ml-dtypes                     0.2.0
+mpmath                        1.3.0
+msgpack                       1.0.7
+mudata                        0.2.3
+multidict                     6.0.4
+multipledispatch              1.0.0
+muon                          0.1.5
+my-package                    0.1
+natsort                       8.4.0
+nbclient                      0.9.0
+nbconvert                     7.13.0
+nbformat                      5.9.2
+nbsphinx                      0.9.3
+nest-asyncio                  1.5.8
+networkx                      3.1
+newick                        1.0.0
+numba                         0.58.1
+numpy                         1.24.4
+numpydoc                      1.6.0
+numpyro                       0.12.1
+nvidia-cublas-cu11            11.10.3.66
+nvidia-cublas-cu12            12.1.3.1
+nvidia-cuda-cupti-cu11        11.7.101
+nvidia-cuda-cupti-cu12        12.1.105
+nvidia-cuda-nvrtc-cu11        11.7.99
+nvidia-cuda-nvrtc-cu12        12.1.105
+nvidia-cuda-runtime-cu11      11.7.99
+nvidia-cuda-runtime-cu12      12.1.105
+nvidia-cudnn-cu11             8.5.0.96
+nvidia-cudnn-cu12             8.9.2.26
+nvidia-cufft-cu11             10.9.0.58
+nvidia-cufft-cu12             11.0.2.54
+nvidia-curand-cu11            10.2.10.91
+nvidia-curand-cu12            10.3.2.106
+nvidia-cusolver-cu11          11.4.0.1
+nvidia-cusolver-cu12          11.4.5.107
+nvidia-cusparse-cu11          11.7.4.91
+nvidia-cusparse-cu12          12.1.0.106
+nvidia-nccl-cu11              2.14.3
+nvidia-nccl-cu12              2.18.1
+nvidia-nvjitlink-cu12         12.3.101
+nvidia-nvtx-cu11              11.7.91
+nvidia-nvtx-cu12              12.1.105
+openpyxl                      3.1.2
+opt-einsum                    3.3.0
+optax                         0.1.7
+orbax-checkpoint              0.2.3
+packaging                     23.2
+pandas                        1.5.3
+pandocfilters                 1.5.0
+parso                         0.8.3
+patsy                         0.5.4
+pexpect                       4.9.0
+pickleshare                   0.7.5
+Pillow                        10.1.0
+pip                           23.3.2
+pkgconfig                     1.5.5
+pkgutil_resolve_name          1.3.10
+platformdirs                  4.1.0
+prompt-toolkit                3.0.43
+protobuf                      4.25.1
+psutil                        5.9.7
+ptyprocess                    0.7.0
+pure-eval                     0.2.2
+Pygments                      2.17.2
+pynndescent                   0.5.11
+pyparsing                     3.1.1
+pyro-api                      0.1.2
+pyro-ppl                      1.8.6
+PySocks                       1.7.1
+python-dateutil               2.8.2
+pytorch-lightning             1.9.5
+pytz                          2023.3.post1
+PyYAML                        6.0.1
+pyzmq                         25.1.2
+referencing                   0.32.0
+requests                      2.31.0
+rich                          13.7.0
+rpds-py                       0.15.2
+scanpy                        1.9.6
+scArches                      0.5.10
+scHPL                         1.0.4
+scikit-learn                  1.3.2
+scikit-misc                   0.2.0
+scipy                         1.10.1
+scvi-tools                    0.20.3
+seaborn                       0.12.2
+session-info                  1.0.0
+setuptools                    57.5.0
+six                           1.16.0
+snowballstemmer               2.2.0
+soupsieve                     2.5
+Sphinx                        7.1.2
+sphinx-basic-ng               1.0.0b2
+sphinxcontrib-applehelp       1.0.4
+sphinxcontrib-devhelp         1.0.2
+sphinxcontrib-htmlhelp        2.0.1
+sphinxcontrib-jsmath          1.0.1
+sphinxcontrib-qthelp          1.0.3
+sphinxcontrib-serializinghtml 1.1.5
+stack-data                    0.6.3
+statsmodels                   0.14.1
+stdlib-list                   0.10.0
+sympy                         1.12
+tabulate                      0.9.0
+tensorstore                   0.1.45
+texttable                     1.7.0
+threadpoolctl                 3.2.0
+tinycss2                      1.2.1
+tomli                         2.0.1
+toolz                         0.12.0
+torch                         2.0.1
+torchmetrics                  1.2.1
+tornado                       6.4
+tqdm                          4.66.1
+traitlets                     5.14.0
+triton                        2.0.0
+typing_extensions             4.9.0
+umap-learn                    0.5.5
+urllib3                       2.1.0
+wcwidth                       0.2.12
+webencodings                  0.5.1
+wheel                         0.40.0
+yarl                          1.9.4
+zipp                          3.17.0
+</pre></div>
+</div>
+</details><p>Once you have set up this environment, you can run the tool either interactively or directly in batch mode.</p>
+<p>To run Finding eML locally, you can choose one of two methods:</p>
+<p><em>1. Direct Execution:</em> Execute the script directly for automated processing.</p>
+<p><em>2. Interactive Execution:</em> Run the Python shell for real-time interaction.</p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="direct.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">1. Direct Execution</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="usage.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Usage</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Foltz lab
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>
